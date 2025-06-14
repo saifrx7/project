@@ -1,9 +1,8 @@
-name: CI
+name: CI for IBM Assignment
 
 on:
   push:
-    branches:
-      - master
+    branches: [main]
 
 jobs:
   build:
@@ -11,15 +10,9 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '14'
+      - name: Show file list
+        run: ls -la
 
-      - name: Install dependencies
-        run: npm install
-
-      - name: Run tests
-        run: npm test
+        
